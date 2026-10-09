@@ -1,0 +1,142 @@
+@font-face{font-family:"Inter Display";src:url(/interdisplay-black.woff) format("woff");font-weight:900;font-style:normal;font-display:swap}
+@font-face{font-family:"Inter";src:url(/inter-regular.woff) format("woff");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Inter";src:url(/inter-semibold.woff) format("woff");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"Inter";src:url(/inter-semibold.woff) format("woff");font-weight:700;font-style:normal;font-display:swap}
+/* Train to Dominate – Segeltraining Florian Stindt */
+:root{
+  --deep:#04192a; --sea:#0a3550; --sea2:#0f5677; --foam:#e9f4f8; --ink:#0c2434; --muted:#4f6a7a;
+  --paper:#f4f8fa; --card:#ffffff; --line:#d3e1e8; --orange:#ff7a1a; --orange-ink:#1b0d00;
+  --f-head:"Inter Display","Inter","Segoe UI",system-ui,sans-serif;
+  --f-body:"Inter","Segoe UI",system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:auto;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--f-body)}
+a{color:inherit}
+img{max-width:100%}
+h1,h2,h3{font-family:var(--f-head);font-weight:900;line-height:1.05;text-wrap:balance;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:20px}
+.kicker{font:600 13px/1.2 var(--f-body);letter-spacing:.16em;text-transform:uppercase}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+
+/* ---------- top bar ---------- */
+.bar{position:absolute;top:0;left:0;right:0;z-index:5;padding:calc(18px + env(safe-area-inset-top,0px)) 20px 0}
+.bar .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:0}
+.brand{color:var(--foam);text-decoration:none;font:600 15px/1.2 var(--f-body);letter-spacing:.02em}
+.brand b{font-family:var(--f-head);font-weight:900;letter-spacing:.04em}
+.nav{display:flex;gap:18px;flex-wrap:wrap}
+.nav a{color:var(--foam);opacity:.85;text-decoration:none;font:600 14px var(--f-body)}
+.nav a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100vh;min-height:100svh;overflow:hidden;color:var(--foam);
+  background:radial-gradient(120% 80% at 70% 15%,#1a6a8f 0%,rgba(26,106,143,0) 55%),linear-gradient(180deg,#0b3f5c 0%,#072a40 55%,var(--deep) 100%);
+  display:flex;align-items:center}
+.hero .wrap{position:relative;z-index:4;width:100%;padding-block:100px 170px}
+.hero .kicker{color:#9fd3e6;opacity:0;animation:fadeUp .9s .2s ease-out forwards}
+.title{font-size:max(54px,min(17vw,15.5vh,176px));letter-spacing:-.02em;margin:14px 0 22px;text-transform:uppercase}
+.title span{display:block;opacity:0;transform:translateX(-40px);animation:sailIn 1s cubic-bezier(.2,.8,.2,1) forwards}
+.title span:nth-child(2){animation-delay:.25s;color:#9fd3e6}
+.title span:nth-child(3){animation-delay:.5s}
+.title em{font-style:normal;color:var(--orange)}
+.lead{font-size:clamp(18px,2.4vw,24px);max-width:32ch;margin:0;opacity:0;animation:fadeUp .9s 1s ease-out forwards}
+.cue{position:absolute;left:50%;bottom:calc(26px + env(safe-area-inset-bottom,0px));z-index:4;transform:translateX(-50%);color:var(--foam);text-decoration:none;
+  display:flex;flex-direction:column;align-items:center;gap:6px;font:600 12px var(--f-body);letter-spacing:.14em;text-transform:uppercase;opacity:0;animation:fadeUp .8s 1.6s forwards}
+.cue i{display:block;width:2px;height:28px;background:linear-gradient(var(--foam),transparent);animation:drip 1.6s infinite}
+
+/* waves */
+.sea{position:absolute;left:0;right:0;bottom:0;height:150px;z-index:1;pointer-events:none}
+.wave{position:absolute;left:0;right:0;bottom:0;background-repeat:repeat-x;background-position:0 100%;animation:d1 linear infinite}
+.w1{height:120px;background-size:900px 70px;opacity:.45;animation-duration:30s;bottom:46px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0 60 C150 20 300 100 450 60 S750 20 900 60 S1100 100 1200 60 V120 H0Z' fill='%231d6f93'/%3E%3C/svg%3E")}
+.w2{height:90px;background-size:700px 60px;opacity:.75;animation-name:d2;animation-duration:20s;animation-direction:reverse;bottom:20px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0 70 C200 30 400 110 600 70 S1000 30 1200 70 V120 H0Z' fill='%23104a68'/%3E%3C/svg%3E")}
+.w3{height:60px;background-size:520px 50px;animation-name:d3;animation-duration:13s;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0 60 C100 40 200 80 300 60 S500 40 600 60 S800 80 900 60 S1100 40 1200 60 V120 H0Z' fill='%2304192a'/%3E%3C/svg%3E")}
+.w1,.w2,.w3{background-color:transparent}
+.sea.front{height:60px;z-index:3}
+.sea .base{position:absolute;left:0;right:0;bottom:0;height:22px;background:#0d3d58;opacity:.7}
+
+/* sailing optimist */
+.opti{position:absolute;z-index:2;bottom:34px;left:-160px;width:clamp(90px,11vw,150px);animation:cross 34s linear 0.6s infinite}
+.opti svg{display:block;width:100%;height:auto;animation:bob 3.2s ease-in-out infinite;transform-origin:50% 90%}
+.opti.far{bottom:96px;width:clamp(44px,5vw,70px);opacity:.55;animation-duration:58s;animation-delay:-20s}
+
+/* wind streaks */
+.wind{position:absolute;inset:0;z-index:1;pointer-events:none}
+.wind i{position:absolute;height:1.5px;width:160px;border-radius:2px;background:linear-gradient(90deg,transparent,rgba(233,244,248,.7),transparent);opacity:0;animation:gust 6s linear infinite}
+.wind i:nth-child(1){top:18%;animation-delay:.4s}
+.wind i:nth-child(2){top:34%;animation-delay:2.2s;width:220px}
+.wind i:nth-child(3){top:26%;animation-delay:3.9s}
+.wind i:nth-child(4){top:46%;animation-delay:5.1s;width:120px}
+.wind i:nth-child(5){top:12%;animation-delay:1.3s;width:260px}
+
+@keyframes sailIn{to{opacity:1;transform:none}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes d1{to{background-position-x:-900px}}@keyframes d2{to{background-position-x:-700px}}@keyframes d3{to{background-position-x:-520px}}
+@keyframes cross{from{transform:translateX(0)}to{transform:translateX(calc(100vw + 320px))}}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(5px) rotate(2deg)}}
+@keyframes gust{0%{opacity:0;transform:translateX(-30vw)}15%{opacity:.8}60%{opacity:0;transform:translateX(70vw)}100%{opacity:0;transform:translateX(70vw)}}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ---------- game ---------- */
+.game{background:var(--deep);color:var(--foam);padding-block:34px 44px}
+.game h2{font-size:clamp(24px,3.6vw,38px);text-align:center;margin-bottom:6px}
+.game h2 em{font-style:normal;color:var(--orange)}
+.game p.sub{text-align:center;margin:0 0 18px;color:#9fd3e6;font-size:15px}
+.frame{width:100%;max-width:980px;margin:0 auto;height:min(76vh,600px);min-height:470px;border:0;display:block;border-radius:10px;background:#0a2a3d;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+
+/* ---------- quote ---------- */
+.quote{background:var(--sea);color:var(--foam);padding-block:64px}
+.quote blockquote{margin:0 auto;max-width:30ch;font:900 clamp(24px,3.4vw,38px)/1.2 var(--f-head);text-wrap:balance}
+.quote figcaption{margin-top:18px;font-size:15px;color:#9fd3e6}
+.quote figure{margin:0}
+
+/* ---------- contact ---------- */
+.contact{padding-block:64px}
+.contact .grid{display:grid;grid-template-columns:1fr 1.3fr;gap:40px;align-items:start}
+.contact h2{font-size:clamp(30px,4vw,44px);margin-bottom:14px}
+.contact dl{margin:20px 0 0;display:grid;grid-template-columns:auto 1fr;gap:8px 16px}
+.contact dt{font-weight:600;color:var(--muted)}
+.contact dd{margin:0;min-width:0;overflow-wrap:anywhere}
+form{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+form label{display:flex;flex-direction:column;gap:6px;font:600 14px var(--f-body);min-width:0}
+form .full{grid-column:1/-1}
+input,textarea{font:inherit;font-weight:400;font-size:16px;padding:11px 12px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);width:100%}
+textarea{min-height:130px;resize:vertical}
+.btn{font:700 16px var(--f-body);background:var(--orange);color:var(--orange-ink);border:0;border-radius:8px;padding:13px 20px;cursor:pointer;justify-self:start}
+.btn:hover{filter:brightness(1.05)}
+.note{font-size:13px;color:var(--muted);margin:0}
+#formMsg{font-size:14px}
+
+/* ---------- footer ---------- */
+footer{background:var(--deep);color:#b9d3df;padding-block:44px calc(44px + env(safe-area-inset-bottom,0px));font-size:15px}
+footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:28px}
+footer h3{font:600 13px var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--foam);margin-bottom:10px}
+footer p{margin:0 0 4px}
+footer a{color:#e9f4f8}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+footer .copy{margin-top:30px;font-size:13px;opacity:.7}
+
+/* ---------- text pages ---------- */
+.page-head{background:linear-gradient(180deg,#0b3f5c,var(--deep));color:var(--foam);padding-block:calc(96px + env(safe-area-inset-top,0px)) 40px}
+.page-head h1{font-size:clamp(30px,5vw,52px)}
+.page-head p{margin:10px 0 0;color:#9fd3e6}
+.prose{max-width:720px;margin:0 auto;padding:40px 20px 64px}
+.prose h2{font-size:24px;margin:36px 0 10px}
+.prose h3{font-family:var(--f-body);font-weight:600;font-size:18px;margin:22px 0 6px}
+.prose ul{padding-left:22px}
+.prose hr{border:0;border-top:1px solid var(--line);margin:44px 0}
+
+@media (max-width:760px){
+  .contact .grid{grid-template-columns:1fr}
+  footer .cols{grid-template-columns:1fr}
+  form{grid-template-columns:1fr;padding:18px}
+  .nav{display:none}
+  .hero .wrap{padding-block:90px 160px}
+  .frame{height:min(72svh,560px)}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;animation-delay:0s!important}
+  .opti{display:none}
+}

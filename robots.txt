@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.train2domin8.com/sitemap.xml

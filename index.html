@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Train to Dominate · Segeltraining Florian Stindt</title>
+<meta name="description" content="Professionelles Segeltraining für Optimistsegler von Florian Stindt in Hamburg – und Opti Regatta, das Regatta-Spiel für Opti-Segler.">
+<link rel="canonical" href="https://www.train2domin8.com/">
+<meta property="og:title" content="Train to Dominate · Segeltraining Florian Stindt">
+<meta property="og:description" content="Professionelles Segeltraining für Optimistsegler von Florian Stindt in Hamburg – und Opti Regatta, das Regatta-Spiel für Opti-Segler.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#04192a">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="bar"><div class="wrap">
+  <a class="brand" href="/">Segeltraining <b>Florian Stindt</b></a>
+  <nav class="nav" aria-label="Hauptmenü"><a href="#spiel">Opti Regatta</a><a href="#kontakt">Kontakt</a><a href="/impressum">Impressum</a></nav>
+</div></header>
+<main>
+<section class="hero" aria-label="Train to Dominate">
+  <div class="wind" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <p class="kicker">Optimist-Segeltraining · Hamburg</p>
+    <h1 class="title"><span>Train</span><span>To</span><span>Dominat<em>e</em></span></h1>
+    <p class="lead">Professionelles Segeltraining für Optimistsegler</p>
+  </div>
+  <div class="opti far" aria-hidden="true"><svg viewBox="0 0 120 130" aria-hidden="true">
+  <path d="M58 6 L60 104" stroke="#e9f4f8" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M61 10 L104 22 L96 92 L62 98 Z" fill="#f7fbfd"/>
+  <path d="M62 97 L103 23" stroke="#9fb7c4" stroke-width="2" stroke-linecap="round"/>
+  <path d="M70 40 L96 46" stroke="#ff7a1a" stroke-width="5"/>
+  <path d="M14 102 L108 102 L100 118 Q60 124 22 118 Z" fill="#ff7a1a"/>
+  <path d="M14 102 L108 102" stroke="#fff" stroke-width="2"/>
+</svg></div>
+  <div class="sea" aria-hidden="true"><div class="wave w1"></div><div class="wave w2"></div></div>
+  <div class="opti" aria-hidden="true"><svg viewBox="0 0 120 130" aria-hidden="true">
+  <path d="M58 6 L60 104" stroke="#e9f4f8" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M61 10 L104 22 L96 92 L62 98 Z" fill="#f7fbfd"/>
+  <path d="M62 97 L103 23" stroke="#9fb7c4" stroke-width="2" stroke-linecap="round"/>
+  <path d="M70 40 L96 46" stroke="#ff7a1a" stroke-width="5"/>
+  <path d="M14 102 L108 102 L100 118 Q60 124 22 118 Z" fill="#ff7a1a"/>
+  <path d="M14 102 L108 102" stroke="#fff" stroke-width="2"/>
+</svg></div>
+  <div class="sea front" aria-hidden="true"><div class="wave w3"></div></div>
+  <a class="cue" href="#spiel">Zum Spiel<i></i></a>
+</section>
+
+<section class="game" id="spiel" aria-labelledby="spiel-h">
+  <div class="wrap">
+    <h2 id="spiel-h">Bald im App Store erhältlich: <em>Opti Regatta</em></h2>
+    <p class="sub">Jetzt schon hier im Browser trainieren – gegen Computer-Boote.</p>
+    <iframe class="frame" src="https://lifrano.github.io/optimist-regatta/" title="Opti Regatta – Spiel" allow="fullscreen; autoplay" allowfullscreen loading="eager"></iframe>
+  </div>
+</section>
+
+<section class="quote">
+  <div class="wrap">
+    <figure>
+      <blockquote>„And then there are those very few players, who train to dominate. They train so hard that winning is inevitable on race night.“</blockquote>
+      <figcaption>Bill Beswick, Sports Psychologist</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="contact" id="kontakt" aria-labelledby="kontakt-h">
+  <div class="wrap grid">
+    <div>
+      <h2 id="kontakt-h">Kontakt</h2>
+      <p>Fragen zum Training oder zu Opti Regatta? Schreib mir oder ruf an.</p>
+      <dl>
+        <dt>E-Mail</dt><dd><a href="mailto:fl.stindt@gmail.com">fl.stindt@gmail.com</a></dd>
+        <dt>Telefon</dt><dd><a href="tel:+4915203405229">+49 152 03405229</a></dd>
+        <dt>Instagram</dt><dd><a href="https://www.instagram.com/train2domin8/" rel="noopener">@train2domin8</a></dd>
+      </dl>
+    </div>
+    <form id="kform" novalidate>
+      <label>Vorname<input name="vorname" autocomplete="given-name"></label>
+      <label>Nachname<input name="nachname" autocomplete="family-name"></label>
+      <label class="full">E-Mail<input name="email" type="email" autocomplete="email"></label>
+      <label class="full">Nachricht<textarea name="nachricht" required></textarea></label>
+      <button class="btn" type="submit">Senden</button>
+      <p class="note full">„Senden“ öffnet dein E-Mail-Programm mit der fertigen Nachricht. Die Website selbst speichert nichts. <span id="formMsg" role="status"></span></p>
+    </form>
+  </div>
+</section>
+</main>
+<script>
+// contact form -> e-mail program
+document.getElementById('kform').addEventListener('submit',function(e){
+  e.preventDefault(); var f=e.target, m=document.getElementById('formMsg');
+  if(!f.nachricht.value.trim()){ m.textContent='Bitte eine Nachricht eingeben.'; f.nachricht.focus(); return; }
+  var name=(f.vorname.value+' '+f.nachname.value).trim();
+  var body=f.nachricht.value+'\n\n'+(name?name+'\n':'')+(f.email.value?f.email.value:'');
+  location.href='mailto:fl.stindt@gmail.com?subject='+encodeURIComponent('Anfrage über train2domin8.com'+(name?' – '+name:''))+'&body='+encodeURIComponent(body);
+  m.textContent='Dein E-Mail-Programm sollte sich jetzt öffnen. Falls nicht: fl.stindt@gmail.com';
+});
+// intro: show "Train to Dominate" for a moment, then glide down to the game
+(function(){
+  if(location.hash||window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var cancelled=false; function stop(){cancelled=true;}
+  ['wheel','touchstart','keydown','mousedown'].forEach(function(t){window.addEventListener(t,stop,{passive:true,once:true});});
+  setTimeout(function(){
+    if(cancelled||window.scrollY>60) return;
+    var el=document.getElementById('spiel'), target=el.getBoundingClientRect().top+window.scrollY-(window.innerWidth<761?0:8);
+    var vh=window.innerHeight, h=el.offsetHeight; if(h<vh) target-=Math.max(0,(vh-h)/2-8);
+    var start=window.scrollY, t0=null, dur=2800;
+    function ease(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;}
+    function step(ts){ if(cancelled) return; if(t0===null)t0=ts; var p=Math.min(1,(ts-t0)/dur);
+      window.scrollTo(0,start+(target-start)*ease(p)); if(p<1) requestAnimationFrame(step); }
+    requestAnimationFrame(step);
+  },3200);
+})();
+</script>
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h3>Impressum</h3>
+        <p>Segeltraining Florian Stindt</p>
+        <p>Florian Stindt</p>
+        <p>Herbert-Weichmann-Straße 35, 22085 Hamburg</p>
+        <p>E-Mail: <a href="mailto:fl.stindt@gmail.com">fl.stindt@gmail.com</a></p>
+        <p>Telefon: <a href="tel:+4915203405229">+49 152 03405229</a></p>
+        <p>USt-IdNr: 59 032 746 801</p>
+      </div>
+      <div>
+        <h3>Rechtliches</h3>
+        <ul>
+          <li><a href="/impressum">Impressum</a></li>
+          <li><a href="/datenschutz">Datenschutz (Website)</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Opti Regatta</h3>
+        <ul>
+          <li><a href="/#spiel">Online spielen</a></li>
+          <li><a href="/optimist-regatta">Hilfe &amp; Kontakt</a></li>
+          <li><a href="/optimist-regatta-datenschutz">Datenschutz (App)</a></li>
+          <li><a href="https://www.instagram.com/train2domin8/" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copy">© <span id="yr">2026</span> Train to Dominate · Segeltraining Florian Stindt</p>
+  </div>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear()</script>
+</body>
+</html>
